@@ -2,30 +2,57 @@ package main
 
 import "fmt"
 
+// incrementing counters..
+
+const (
+	c1 = iota
+	c2
+	c3
+)
+
+const (
+	a2 = iota
+)
+
+/*const (
+	c1 = iota
+	c2 = iota
+	c3 = iota
+)*/
+
+const (
+	_ = iota
+	okCoder
+	superCoder
+	legendaryCoder
+)
+
 func main() {
 
-	var s string = "This is a string"
-	fmt.Printf("%v , %T\n", s, s)
+	const myConstant = 4
+	//cannot modify constants
+	//myConstant = 1
+	fmt.Printf("%v, %T\n", myConstant, myConstant)
 
-	//prints 104 because string is array of bytes.
-	fmt.Printf("%v , %T\n", s[1], s[1])
+	//typed constants
+	const a int = 1
+	const b string = "b"
+	const c float32 = 3.14
+	const d bool = true
 
-	//convert to string...
-	fmt.Printf("%v , %T\n", string(s[1]), string(s[1]))
+	fmt.Printf("%v, %T\n", c+myConstant, c+myConstant)
 
-	//s[2] = 100
-	//s[2] = 'a'
-	//s[2] = "nothing can go here as it is immutable"
-	fmt.Printf("%v , %T\n", s, s)
+	fmt.Printf("%v, %T\n", c1, c1)
+	fmt.Printf("%v, %T\n", c2, c2)
+	fmt.Printf("%v, %T\n", c3, c3)
 
-	var s2 = "Another String"
+	fmt.Printf("%v, %T\n", a2, a2)
 
-	fmt.Printf("%v , %T\n", s+s2, s+s2)
-
-	b := []byte(s)
-	fmt.Printf("%v , %T\n", b, b)
-
-	c := 'a'
-	fmt.Printf("%v , %T\n", c, c)
+	var coder int = legendaryCoder
+	fmt.Printf("%v", coder == legendaryCoder)
 
 }
+
+//typed constants
+//untyped constants
+//enumerated
