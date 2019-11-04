@@ -4,31 +4,47 @@ import "fmt"
 
 func main() {
 
-	var normalIntUnspecified int = 42 // unspecified represents platform dependent
-	fmt.Printf("%v, %T\n", normalIntUnspecified, normalIntUnspecified)
+	a := 10
+	b := 3
 
-	var smallInt int8 = 42 // 8 bit
-	fmt.Printf("%v, %T\n", smallInt, smallInt)
+	fmt.Printf("%v, %T\n", a, a)
+	fmt.Printf("%v, %T\n", b, b)
 
-	var mediumInt int16 = 42 // 16bit
-	fmt.Printf("%v, %T\n", mediumInt, mediumInt)
+	fmt.Printf("%v\n", a+b)
+	fmt.Printf("%v\n", a-b)
+	fmt.Printf("%v\n", a*b)
+	fmt.Printf("%v\n", a/b)
+	fmt.Printf("%v\n", a%b)
 
-	var regular int32 = 42 // 32 bit
-	fmt.Printf("%v, %T\n", regular, regular)
+	var normalInt int = 5
+	var abnormalInt uint16 = 5
+	//complaints
+	//fmt.Printf("%v\n", normalInt+abnormalInt)
+	//mismatched types.
 
-	//bigger than this? go for big package from math library
+	fmt.Printf("%v\n", normalInt+int(abnormalInt))
 
-	// we also have unsigned ints. add prefix u.
+	/*
+		a = 10  binary = 1 0 1 0
+		b =  3  bianry = 0 0 1 1
+				 a & b = 0 0 1 0
+				 a | b = 1 0 1 1
+				 a ^ b = 1 0 0 1
 
-	var UnormalIntUnspecified uint = 42 // unspecified represents platform dependent
-	fmt.Printf("%v, %T\n", UnormalIntUnspecified, UnormalIntUnspecified)
+	*/
+	fmt.Printf("%v\n", a&b)
+	fmt.Printf("%v\n", a|b)
+	fmt.Printf("%v\n", a^b)
 
-	var UsmallInt uint8 = 42 // 8 bit
-	fmt.Printf("%v, %T\n", UsmallInt, UsmallInt)
+	a = 8
+	//left shift
+	fmt.Printf("%v\n", a<<3) //multiply by 2^3
+	//right shift
+	fmt.Printf("%v\n", a>>3) // divide by 2^3
 
-	var UmediumInt uint16 = 42 // 16bit
-	fmt.Printf("%v, %T\n", UmediumInt, UmediumInt)
+	n := 3.14
+	n = 1e10
+	n = 0.4E14
+	fmt.Printf("%v\n", n)
 
-	var Uregular uint32 = 42 // 32 bit
-	fmt.Printf("%v, %T\n", Uregular, Uregular)
 }
