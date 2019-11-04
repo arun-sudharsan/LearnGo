@@ -7,5 +7,8 @@ func callME() {
 }
 
 func main() {
-	callME()
+	var i int
+	i = 42
+	i = 27
+	fmt.Println(i)
 }
